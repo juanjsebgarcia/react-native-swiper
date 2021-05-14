@@ -14,7 +14,7 @@ import {
   Platform,
   ActivityIndicator
 } from 'react-native'
-import ViewPager from '@react-native-community/viewpager';
+import PagerView from 'react-native-pager-view';
 
 /**
  * Default styles
@@ -637,14 +637,14 @@ export default class extends Component {
        )
     }
     return (
-      <ViewPager ref={this.refScrollView}
+      <PagerView ref={this.refScrollView}
         {...this.props}
         initialPage={this.props.loop ? this.state.index + 1 : this.state.index}
         onPageSelected={this.onScrollEnd}
         key={pages.length}
         style={[styles.wrapperAndroid, this.props.style]}>
         {pages}
-      </ViewPager>
+      </PagerView>
     )
   }
 
